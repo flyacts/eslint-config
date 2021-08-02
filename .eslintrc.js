@@ -55,6 +55,54 @@ module.exports = {
         'import/no-default-export': ['error'],
         'no-trailing-spaces': ['error'],
         'prefer-const': ['error'],
-        'comma-dangle': ['error', 'only-multiline']
+        'comma-dangle': ['error', 'only-multiline'],
+        'require-await': ['error'],
+        '@typescript-eslint/no-floating-promises': ['error'],
+        'no-void': ['error'],
+        'arrow-return-shorthand': ['error', 'as-needed'],
+        '@typescript-eslint/naming-convention': [
+            'error',
+            {
+                selector: 'class',
+                format: ['PascalCase']
+            },
+            {
+                selector: 'variable',
+                format: ['camelCase', 'UPPER_CASE'],
+                leadingUnderscore: 'allow',
+            }
+        ],
+        'spaced-comment': ['error'],
+        'no-multiple-empty-lines': ['error'],
+        'no-extra-parens': ['error'],
+        'one-var': ['error'],
+        'method-signature-style': ['error', 'method'],
+        'quotes': ['error', 'single'],
+        'semi': ['error'],
+        'space-before-function-paren': [
+            'error',
+            {
+                'anonymous': 'never',
+                'named': 'never',
+                'asyncArrow': 'always',
+            }
+        ],
+        'keyword-spacing': [
+            'error',
+            {
+
+            }
+        ],
+        'array-bracket-spacing': ['error', 'never'],
+        'arrow-spacing': ['error'],
+        'block-spacing': ['error'],
+        'comma-spacing': ['error'],
+        'computed-property-spacing': ['error'],
+        'key-spacing': ['error'],
+        'object-curly-spacing': ['error'],
+        'semi-spacing': ['error'],
+        'space-in-parens': ['error'],
+        'space-infix-ops': ['error'],
+        'template-curly-spacing': ['error'],
     },
 };
