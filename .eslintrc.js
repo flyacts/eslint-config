@@ -8,6 +8,9 @@ module.exports = {
         browser: true,
     },
     parser: '@typescript-eslint/parser',
+    parserOptions: {
+        project: ['tsconfig.json'],
+    },
     plugins: [
         '@typescript-eslint',
         'ordered-imports',
@@ -30,7 +33,7 @@ module.exports = {
         ],
         'max-len': [
             'error',
-            { 'code': 120 },
+            {'code': 120},
         ],
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         'header/header': [
@@ -59,25 +62,12 @@ module.exports = {
         'require-await': ['error'],
         '@typescript-eslint/no-floating-promises': ['error'],
         'no-void': ['error'],
-        'arrow-return-shorthand': ['error', 'as-needed'],
-        '@typescript-eslint/naming-convention': [
-            'error',
-            {
-                selector: 'class',
-                format: ['PascalCase']
-            },
-            {
-                selector: 'variable',
-                format: ['camelCase', 'UPPER_CASE'],
-                leadingUnderscore: 'allow',
-            }
-        ],
-        'spaced-comment': ['error'],
+        'arrow-body-style': ['error'],
+        'spaced-comment': ['error', 'always', {'exceptions': ['!']}],
         'no-multiple-empty-lines': ['error'],
         'no-extra-parens': ['error'],
         'one-var': ['error'],
-        'method-signature-style': ['error', 'method'],
-        'quotes': ['error', 'single'],
+        '@typescript-eslint/method-signature-style': ['error', 'method'],
         'semi': ['error'],
         'space-before-function-paren': [
             'error',
@@ -104,5 +94,30 @@ module.exports = {
         'space-in-parens': ['error'],
         'space-infix-ops': ['error'],
         'template-curly-spacing': ['error'],
+        '@typescript-eslint/naming-convention': ['error'],
+        'no-console': ['error'],
+        'no-debugger': ['error'],
+        'import/no-internal-modules': ['error', {
+            'allow': [
+                'rxjs/*',
+                '@angular/material/*',
+                '@angular/common/*',
+            ],
+        }],
+        'no-bitwise': ['error'],
+        '@typescript-eslint/no-dynamic-delete': ['error'],
+        'no-empty': ['error'],
+        '@typescript-eslint/promise-function-async': ['error'],
+        '@typescript-eslint/no-for-in-array': ['error'],
+        '@typescript-eslint/strict-boolean-expressions': ['error'],
+        // strict-type-predicates is missing from typescript-eslint:
+        // https://github.com/typescript-eslint/typescript-eslint/issues/62
+        'import/no-duplicates': ['error'],
+        '@typescript-eslint/array-type': ['error', {default: 'array-simple'}],
+        '@typescript-eslint/explicit-member-accessibility': ['error'],
+        '@typescript-eslint/member-ordering': ['error'],
+        // jsdoc-format is not directly available in eslint
+        // it may or may not be implementable via https://github.com/gajus/eslint-plugin-jsdoc
+
     },
 };
