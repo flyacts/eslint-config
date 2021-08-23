@@ -16,6 +16,7 @@ module.exports = {
         'ordered-imports',
         'header',
         'import',
+        'sonarjs',
     ],
     extends: [
         'eslint:recommended',
@@ -118,6 +119,18 @@ module.exports = {
         '@typescript-eslint/member-ordering': ['error'],
         // jsdoc-format is not directly available in eslint
         // it may or may not be implementable via https://github.com/gajus/eslint-plugin-jsdoc
+        'sonarjs/no-identical-conditions': 'error',
+        'sonarjs/no-all-duplicated-branches': 'error',
+        'sonarjs/no-collection-size-mischeck': 'error',
+        'sonarjs/no-element-overwrite': 'error',
+        'sonarjs/no-ignored-return': 'error',
+        'sonarjs/no-use-of-empty-return-value': 'error',
+        'sonarjs/cognitive-complexity': ['error', 15],
+        'sonarjs/no-gratuitous-expressions': 'error',
+        'sonarjs/no-duplicate-string': 'error',
+        'sonarjs/prefer-immediate-return': 'error',
+        'curly': ['error'],
+        'no-unsafe-finally': ['error'],
 
     },
 };
