@@ -2,7 +2,7 @@
   "name": "@flyacts/eslint-config",
   "version": "1.0.0",
   "description": "An eslint config for our projects",
-  "main": "index.js",
+  "main": ".eslintrc.js",
   "scripts": {
     "lint": "eslint"
   },
