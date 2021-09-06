@@ -13,7 +13,6 @@ module.exports = {
     },
     plugins: [
         '@typescript-eslint',
-        'ordered-imports',
         'header',
         'import',
         'sonarjs',
@@ -21,7 +20,6 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:ordered-imports/recommended',
     ],
     rules: {
         quotes: [
@@ -46,11 +44,13 @@ module.exports = {
         '@typescript-eslint/unified-signatures': ['error'],
         '@typescript-eslint/no-explicit-any': ['error'],
         '@typescript-eslint/no-implicit-any-catch': ['error'],
+        '@typescript-eslint/no-shadow': ['error'],
+        '@typescript-eslint/require-await': ['error'],
         'no-caller': ['error'],
         'no-new-wrappers': ['error'],
         'no-var': ['error'],
         'no-invalid-this': ['error'],
-        'no-shadow': ['error'],
+        'no-shadow': ['off'],
         'no-throw-literal': ['error'],
         'no-unused-expressions': ['error'],
         'eqeqeq': ['error'],
@@ -59,15 +59,21 @@ module.exports = {
         'import/no-default-export': ['error'],
         'no-trailing-spaces': ['error'],
         'prefer-const': ['error'],
-        'comma-dangle': ['error', 'only-multiline'],
-        'require-await': ['error'],
+        'comma-dangle': [
+            'error',
+            'always-multiline',
+        ],
+        'require-await': ['off'],
         '@typescript-eslint/no-floating-promises': ['error'],
         'no-void': ['error'],
         'arrow-body-style': ['error'],
         'spaced-comment': ['error', 'always', {'exceptions': ['!']}],
         'no-multiple-empty-lines': ['error'],
         'no-extra-parens': ['error'],
-        'one-var': ['error'],
+        'one-var': [
+            'error',
+            'never',
+        ],
         '@typescript-eslint/method-signature-style': ['error', 'method'],
         'semi': ['error'],
         'space-before-function-paren': [
@@ -90,12 +96,21 @@ module.exports = {
         'comma-spacing': ['error'],
         'computed-property-spacing': ['error'],
         'key-spacing': ['error'],
-        'object-curly-spacing': ['error'],
+        'object-curly-spacing': ['error', 'always'],
         'semi-spacing': ['error'],
         'space-in-parens': ['error'],
         'space-infix-ops': ['error'],
         'template-curly-spacing': ['error'],
-        '@typescript-eslint/naming-convention': ['error'],
+        '@typescript-eslint/naming-convention': [
+            'error',
+            {
+                selector: 'variable',
+                format: [
+                    'camelCase',
+                    'UPPER_CASE',
+                ]
+            }
+        ],
         'no-console': ['error'],
         'no-debugger': ['error'],
         'import/no-internal-modules': ['error', {
@@ -131,6 +146,16 @@ module.exports = {
         'sonarjs/prefer-immediate-return': 'error',
         'curly': ['error'],
         'no-unsafe-finally': ['error'],
-
+        'no-restricted-imports': [
+            'error',
+            {
+                patterns: [
+                    'src/*'
+                ]
+            }
+        ],
+        'no-return-await': ['error'],
+        'simple-import-sort/exports': ['error'],
+        'simple-import-sort/imports': ['error'],
     },
 };
