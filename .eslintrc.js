@@ -15,6 +15,7 @@ module.exports = {
         '@typescript-eslint',
         'header',
         'import',
+        'simple-import-sort',
         'sonarjs',
     ],
     extends: [
@@ -28,11 +29,11 @@ module.exports = {
             {
                 avoidEscape: true,
                 allowTemplateLiterals: true,
-            }
+            },
         ],
         'max-len': [
             'error',
-            {'code': 120},
+            { 'code': 120 },
         ],
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         'header/header': [
@@ -67,7 +68,7 @@ module.exports = {
         '@typescript-eslint/no-floating-promises': ['error'],
         'no-void': ['error'],
         'arrow-body-style': ['error'],
-        'spaced-comment': ['error', 'always', {'exceptions': ['!']}],
+        'spaced-comment': ['error', 'always', { 'exceptions': ['!'] }],
         'no-multiple-empty-lines': ['error'],
         'no-extra-parens': ['error'],
         'one-var': [
@@ -82,13 +83,11 @@ module.exports = {
                 'anonymous': 'never',
                 'named': 'never',
                 'asyncArrow': 'always',
-            }
+            },
         ],
         'keyword-spacing': [
             'error',
-            {
-
-            }
+            { },
         ],
         'array-bracket-spacing': ['error', 'never'],
         'arrow-spacing': ['error'],
@@ -108,8 +107,8 @@ module.exports = {
                 format: [
                     'camelCase',
                     'UPPER_CASE',
-                ]
-            }
+                ],
+            },
         ],
         'no-console': ['error'],
         'no-debugger': ['error'],
@@ -129,7 +128,7 @@ module.exports = {
         // strict-type-predicates is missing from typescript-eslint:
         // https://github.com/typescript-eslint/typescript-eslint/issues/62
         'import/no-duplicates': ['error'],
-        '@typescript-eslint/array-type': ['error', {default: 'array-simple'}],
+        '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
         '@typescript-eslint/explicit-member-accessibility': ['error'],
         '@typescript-eslint/member-ordering': ['error'],
         // jsdoc-format is not directly available in eslint
@@ -150,9 +149,9 @@ module.exports = {
             'error',
             {
                 patterns: [
-                    'src/*'
-                ]
-            }
+                    'src/*',
+                ],
+            },
         ],
         'no-return-await': ['error'],
         'simple-import-sort/exports': ['error'],
