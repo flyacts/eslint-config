@@ -18,6 +18,7 @@ module.exports = {
         'import',
         'simple-import-sort',
         'sonarjs',
+        'no-only-tests',
     ],
     extends: [
         'eslint:recommended',
@@ -111,7 +112,7 @@ module.exports = {
                 ],
             },
         ],
-        'no-console': ['error'],
+        'no-console': ['warning'],
         'no-debugger': ['error'],
         'import/no-internal-modules': ['error', {
             'allow': [
@@ -176,6 +177,7 @@ module.exports = {
                 prev: ['const', 'let'],
                 next: ['const', 'let'],
             },
-        ]
+        ],
+        'no-only-tests/no-only-tests': 'error',
     },
 };
