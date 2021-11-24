@@ -84,7 +84,7 @@ If you have the need to overwrite some of our in-house rules for your project, y
 
 You have to know wich rule you want to disable and you have to look up *how* to disable it.
 
-For example, if you want to disable the mandatory [header](https://github.com/Stuk/eslint-plugin-header) and the [strict boolean check](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md) you would modify your root `.eslintrc.json` as follows:
+For example, if you want to disable the mandatory [header](https://github.com/Stuk/eslint-plugin-header) rule you would modify your root `.eslintrc.json` as follows:
 
 ```json
 {
@@ -109,8 +109,7 @@ For example, if you want to disable the mandatory [header](https://github.com/St
         "project": ["apps/**/tsconfig.*?.json", "libs/**/tsconfig.*?.json"]
       },
       "rules": {
-        "header/header": [0],
-        "@typescript-eslint/strict-boolean-expressions": 0
+        "header/header": [0]
       }
     }
   ]
