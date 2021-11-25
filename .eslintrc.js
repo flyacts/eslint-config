@@ -1,6 +1,7 @@
 /*!
  * @copyright FLYACTS GmbH 2021
  */
+
 module.exports = {
     root: true,
     env: {
@@ -17,6 +18,7 @@ module.exports = {
         'import',
         'simple-import-sort',
         'sonarjs',
+        'no-only-tests',
     ],
     extends: [
         'eslint:recommended',
@@ -110,13 +112,16 @@ module.exports = {
                 ],
             },
         ],
-        'no-console': ['error'],
+        'no-console': ['warning'],
         'no-debugger': ['error'],
         'import/no-internal-modules': ['error', {
             'allow': [
                 'rxjs/*',
                 '@angular/material/*',
-                '@angular/common/*',
+                '@angular/common/**/*',
+                '@angular/cdk/*',
+                '@angular/core/testing',
+                '@angular/platform-browser/*'
             ],
         }],
         'no-bitwise': ['error'],
@@ -124,7 +129,6 @@ module.exports = {
         'no-empty': ['error'],
         '@typescript-eslint/promise-function-async': ['error'],
         '@typescript-eslint/no-for-in-array': ['error'],
-        '@typescript-eslint/strict-boolean-expressions': ['error'],
         // strict-type-predicates is missing from typescript-eslint:
         // https://github.com/typescript-eslint/typescript-eslint/issues/62
         'import/no-duplicates': ['error'],
@@ -156,5 +160,24 @@ module.exports = {
         'no-return-await': ['error'],
         'simple-import-sort/exports': ['error'],
         'simple-import-sort/imports': ['error'],
+        'padding-line-between-statements': [
+            'error',
+            {
+                blankLine: 'always',
+                prev: '*',
+                next: 'return',
+            },
+            {
+                blankLine: 'always',
+                prev: ['const', 'let'],
+                next: '*',
+            },
+            {
+                blankLine: 'any',
+                prev: ['const', 'let'],
+                next: ['const', 'let'],
+            },
+        ],
+        'no-only-tests/no-only-tests': 'error',
     },
 };
