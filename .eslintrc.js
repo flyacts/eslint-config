@@ -112,7 +112,7 @@ module.exports = {
                 ],
             },
         ],
-        'no-console': ['warning'],
+        'no-console': ['warn'],
         'no-debugger': ['error'],
         'import/no-internal-modules': ['error', {
             'allow': [
