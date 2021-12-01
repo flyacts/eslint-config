@@ -40,7 +40,13 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         'header/header': [
             2,
-            '.license-header.ts',
+            'block',
+            [
+                '!',
+                ' * @copyright FLYACTS GmbH 2021',
+                ' ',
+            ],
+            2,
         ],
         '@typescript-eslint/adjacent-overload-signatures': ['error'],
         '@typescript-eslint/prefer-for-of': ['error'],
@@ -121,7 +127,7 @@ module.exports = {
                 '@angular/common/**/*',
                 '@angular/cdk/*',
                 '@angular/core/testing',
-                '@angular/platform-browser/*'
+                '@angular/platform-browser/*',
             ],
         }],
         'no-bitwise': ['error'],
