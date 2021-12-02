@@ -124,7 +124,7 @@ module.exports = {
             'allow': [
                 'rxjs/*',
                 '@angular/material/*',
-                '@angular/common/**/*',
+                '@angular/common/*',
                 '@angular/cdk/*',
                 '@angular/core/testing',
                 '@angular/platform-browser/*',
