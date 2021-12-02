@@ -168,7 +168,7 @@ We use a combination of native ESLint rules coupled to a number of plugins ([@ty
 * Requires any function or method that returns a Promise to be marked async (`@typescript-eslint/promise-function-async`)
 * Prohibits iterating over an array with a for-in loop (`@typescript-eslint/no-for-in-array`)
 * Report repeated import of the same module in multiple places (`import/no-duplicates`)
-* Requires using either `[T]` or `Array<T>` for arrays (`@typescript-eslint/array-type`)
+* Requires using either `T[]` or `Array<T>` for arrays (`@typescript-eslint/array-type`)
 * Requires explicit accessibility modifiers on class properties and methods (`@typescript-eslint/explicit-member-accessibility`)
 * Requires a consistent member declaration order (`@typescript-eslint/member-ordering`)
 * Related "if/else if" statements should not have the same conditions (`sonarjs/no-identical-conditions`)
