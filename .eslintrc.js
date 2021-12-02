@@ -128,6 +128,8 @@ module.exports = {
                 '@angular/cdk/*',
                 '@angular/core/testing',
                 '@angular/platform-browser/*',
+                '@angular/platform-browser-dynamic/*',
+                'zone.js/testing',
             ],
         }],
         'no-bitwise': ['error'],
