@@ -26,9 +26,10 @@ FLYACTS' custom ESLint Config
     * either follow the [official instructions](https://github.com/eslint/eslint#installation-and-usage)
     * or install following dependencies manually:
     ```sh
-    npm install --save-dev --save-exact eslint@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest
+    npm install --save-dev --save-exact eslint@8.3.0 @typescript-eslint/eslint-plugin@5.5.0 @typescript-eslint/parser@5.5.0
     ```
     and create a `.eslintrc.json` in the root of your project
+    > Note: they are currently some issues with the latest eslint version, please use the versions above as max versions numbers for now
 
 * Install `@flyacts/eslint-config` as a dev dependency for your project:
 

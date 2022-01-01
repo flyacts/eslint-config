@@ -1,5 +1,5 @@
 /*!
- * @copyright FLYACTS GmbH 2021
+ * @copyright FLYACTS GmbH 2022
  */
 
 module.exports = {
@@ -43,7 +43,7 @@ module.exports = {
             'block',
             [
                 '!',
-                ' * @copyright FLYACTS GmbH 2021',
+                ' * @copyright FLYACTS GmbH 2022',
                 ' ',
             ],
             2,
