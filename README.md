@@ -162,7 +162,6 @@ We use a combination of native ESLint rules coupled to a number of plugins ([@ty
 * Enforces naming conventions for everything across a codebase (`@typescript-eslint/naming-convention`)
 * Disallows calls or assignments to methods of the `console` object (`no-console`)
 * Disallows `debugger` statements (`no-debugger`)
-* Prevents importing the submodules of other modules (`import/no-internal-modules`)
 * Disallows bitwise operators (`no-bitwise`)
 * Disallows the delete operator with computed key expressions (`@typescript-eslint/no-dynamic-delete`)
 * Disallows empty block statements (`no-empty`)
