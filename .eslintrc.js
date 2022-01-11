@@ -10,7 +10,9 @@ module.exports = {
     },
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        project: ['tsconfig.json'],
+        project: 'tsconfig.json',
+        sourceType: 'module',
+        ecmaVersion: 2018,
     },
     plugins: [
         '@typescript-eslint',
@@ -19,10 +21,12 @@ module.exports = {
         'simple-import-sort',
         'sonarjs',
         'no-only-tests',
+        'rxjs',
     ],
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:rxjs/recommended',
     ],
     rules: {
         quotes: [
@@ -184,5 +188,7 @@ module.exports = {
             },
         ],
         'no-only-tests/no-only-tests': 'error',
+        'rxjs/no-sharereplay': 'off',
+        'rxjs/finnish': 'error',
     },
 };
