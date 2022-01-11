@@ -10,7 +10,9 @@ module.exports = {
     },
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        project: ['tsconfig.json'],
+        project: 'tsconfig.json',
+        sourceType: 'module',
+        ecmaVersion: 2018,
     },
     plugins: [
         '@typescript-eslint',
@@ -19,10 +21,12 @@ module.exports = {
         'simple-import-sort',
         'sonarjs',
         'no-only-tests',
+        'rxjs',
     ],
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:rxjs/recommended',
     ],
     rules: {
         quotes: [
@@ -64,7 +68,16 @@ module.exports = {
         'no-unused-expressions': ['error'],
         'eqeqeq': ['error'],
         'eol-last': ['error'],
-        'indent': ['error', 4],
+        'indent': [
+            'error',
+            4,
+            {
+                'SwitchCase': 1,
+                'MemberExpression': 0,
+                'ArrayExpression': 1,
+                'ObjectExpression': 1,
+            },
+        ],
         'import/no-default-export': ['error'],
         'no-trailing-spaces': ['error'],
         'prefer-const': ['error'],
@@ -120,18 +133,6 @@ module.exports = {
         ],
         'no-console': ['warn'],
         'no-debugger': ['error'],
-        'import/no-internal-modules': ['error', {
-            'allow': [
-                'rxjs/*',
-                '@angular/material/*',
-                '@angular/common/*',
-                '@angular/cdk/*',
-                '@angular/core/testing',
-                '@angular/platform-browser/*',
-                '@angular/platform-browser-dynamic/*',
-                'zone.js/testing',
-            ],
-        }],
         'no-bitwise': ['error'],
         '@typescript-eslint/no-dynamic-delete': ['error'],
         'no-empty': ['error'],
@@ -187,5 +188,7 @@ module.exports = {
             },
         ],
         'no-only-tests/no-only-tests': 'error',
+        'rxjs/no-sharereplay': 'off',
+        'rxjs/finnish': 'error',
     },
 };

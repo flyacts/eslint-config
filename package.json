@@ -1,6 +1,6 @@
 {
   "name": "@flyacts/eslint-config",
-  "version": "3.1.1",
+  "version": "4.0.0",
   "description": "FLYACTS rules for ESLint",
   "main": ".eslintrc.js",
   "scripts": {
@@ -33,13 +33,14 @@
     "@typescript-eslint/parser": "5.5.0",
     "eslint": "8.3.0",
     "eslint-plugin-header": "3.1.1",
-    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-import": "2.25.4",
     "eslint-plugin-no-only-tests": "2.6.0",
+    "eslint-plugin-rxjs": "5.0.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
     "eslint-plugin-sonarjs": "0.11.0"
   },
   "devDependencies": {
-    "typescript": "4.5.2",
+    "typescript": "4.5.4",
     "typescript-eslint-language-service": "5.0.0"
   }
 }
