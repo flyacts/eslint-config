@@ -108,7 +108,7 @@ In order to avoid any issues, be sure to add the following in every other `.esli
 Run the linter: `npx nx run-many --all --target=lint [--fix]`
 ## <a id="rules"></a> Rules
 
-We use a combination of native ESLint rules coupled to a number of plugins ([@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint), [eslint-plugin-header](https://github.com/Stuk/eslint-plugin-header), [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import), [eslint-plugin-no-only-tests](https://github.com/levibuzolic/eslint-plugin-no-only-tests), [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) and [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs)).
+We use a combination of native ESLint rules coupled to a number of plugins ([@typescript-eslint](https://github.com/typescript-eslint/typescript-eslint), [eslint-plugin-header](https://github.com/Stuk/eslint-plugin-header), [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import), [eslint-plugin-no-only-tests](https://github.com/levibuzolic/eslint-plugin-no-only-tests), [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort), [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs) and [eslint-plugin-rxjs](https://github.com/cartant/eslint-plugin-rxjs)).
 
 ### <a id="list"></a> List
 * Enforces the consistent use of either backticks, double, or single quotes (`quotes`)
@@ -189,11 +189,13 @@ We use a combination of native ESLint rules coupled to a number of plugins ([@ty
 * Sorts and groups chunks of imports (`simple-import-sort/imports`)
 * Requires or disallows padding lines between statements (`padding-line-between-statements`)
 * Prevents you from committing focused (`.only`) tests to CI, which may prevent your entire test suite from running (`no-only-tests/no-only-tests`)
+* Enforces the use of Finnish notation (`rxjs/finnish`)
+* Uses the [recommended eslint-plugin-rxjs rules](https://github.com/cartant/eslint-plugin-rxjs#rules)
 
 ### <a id="overwritingRules"></a> Overwriting rules
 If you have the need to overwrite (or disable) some of our in-house rules for your project, you can do it without much fuss and hassle.
 
-You have to know wich rule you want to disable and you have to look up *how* to disable it.
+You have to know which rule you want to disable and you have to look up *how* to disable it.
 
 For example, if you want to disable the mandatory [header](https://github.com/Stuk/eslint-plugin-header) rule you would modify your root `.eslintrc.json` as follows:
 
