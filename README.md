@@ -34,7 +34,7 @@ FLYACTS' custom ESLint Config
 * Install `@flyacts/eslint-config` as a dev dependency for your project:
 
 ```sh
-npm installation --save-dev [--save-exact] @flyacts/eslint-config
+npm install --save-dev [--save-exact] @flyacts/eslint-config
 ```
 > Use the --save-exact flag if you want to install a fixed/specific version of this package
 
