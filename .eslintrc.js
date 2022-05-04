@@ -16,6 +16,7 @@ module.exports = {
     },
     plugins: [
         '@typescript-eslint',
+        'deprecation',
         'header',
         'import',
         'simple-import-sort',
@@ -190,5 +191,6 @@ module.exports = {
         'no-only-tests/no-only-tests': 'error',
         'rxjs/no-sharereplay': 'off',
         'rxjs/finnish': 'error',
+        'deprecation/deprecation': 'error',
     },
 };
