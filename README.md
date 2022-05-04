@@ -191,6 +191,7 @@ We use a combination of native ESLint rules coupled to a number of plugins ([@ty
 * Prevents you from committing focused (`.only`) tests to CI, which may prevent your entire test suite from running (`no-only-tests/no-only-tests`)
 * Enforces the use of Finnish notation (`rxjs/finnish`)
 * Uses the [recommended eslint-plugin-rxjs rules](https://github.com/cartant/eslint-plugin-rxjs#rules)
+* Disallow the use of deprecated code (`deprecation/deprecation`)
 
 ### <a id="overwritingRules"></a> Overwriting rules
 If you have the need to overwrite (or disable) some of our in-house rules for your project, you can do it without much fuss and hassle.
