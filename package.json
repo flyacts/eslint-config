@@ -1,6 +1,6 @@
 {
   "name": "@flyacts/eslint-config",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "FLYACTS rules for ESLint",
   "main": ".eslintrc.js",
   "scripts": {
