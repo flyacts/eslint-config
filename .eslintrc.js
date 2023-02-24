@@ -48,7 +48,7 @@ module.exports = {
             'block',
             [
                 '!',
-                ' * @copyright FLYACTS GmbH 2022',
+                ' * @copyright FLYACTS GmbH 2023',
                 ' ',
             ],
             2,
