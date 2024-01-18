@@ -28,7 +28,7 @@ FLYACTS' custom ESLint Config
     ```sh
     npm install --save-dev --save-exact eslint@8.3.0 @typescript-eslint/eslint-plugin@5.5.0 @typescript-eslint/parser@5.5.0
     ```
-    and create a `.eslintrc.json` in the root of your project
+    and create a `.eslintrc.js` in the root of your project
     > Note: they are currently some issues with the latest eslint version, please use the versions above as max versions numbers for now
 
 * Install `@flyacts/eslint-config` as a dev dependency for your project:
@@ -40,15 +40,23 @@ npm install --save-dev [--save-exact] @flyacts/eslint-config
 
 ## <a id="howToUse"></a> How to use
 ### <a id="standaloneProjects"></a> Standalone projects
-In your `.eslintrc`:
+In your `.eslintrc.js`:
 
-```json
-{
-    "extends": "@flyacts/eslint-config",
-    "parserOptions": {
-        "project": "./tsconfig.json"
+```js
+module.exports = {
+  "root": true,
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": ["@flyacts/eslint-config"],
+      "parserOptions": {
+          "project": ["./tsconfig.json"],
+          "tsconfigRootDir": __dirname
+      }
     }
-}
+  ]
+};
 ```
 
 Run the linter: `npx eslint --ext .ts . [--fix]`
@@ -59,10 +67,10 @@ The configuration for monorepos is not as straight forward as for standalone pro
 #### <a id="nx"></a> [Nx](https://nx.dev/)
 In this guide we will show you how to implement our linter for your Nx monorepo. After this configuration you will be able to lint your whole monorepo (every projects in your `./app/**` directory as well as every library (`./libs/**`). Please note that for this example, our projects within the app directory are angular projects.
 
-The first step is to modify the `.eslintrc.json` in the root of your project:
+The first step is to modify the `.eslintrc.js` in the root of your project:
 
-```json
-{
+```js
+module.exports = {
     "root": true,
     "ignorePatterns": ["**/*"],
     "plugins": ["@nrwl/nx"],
@@ -81,25 +89,9 @@ The first step is to modify the `.eslintrc.json` in the root of your project:
             "files": ["*.ts"],
             "extends": ["@flyacts/eslint-config"],
             "parserOptions": {
-                "project": ["apps/**/tsconfig.*?.json", "libs/**/tsconfig.*?.json"]
+                "project": ["apps/**/tsconfig.*?.json", "libs/**/tsconfig.*?.json"],
+                "tsconfigRootDir": __dirname
             }
-        }
-    ]
-}
-```
-
-In order to avoid any issues, be sure to add the following in every other `.eslintrc.json` (`./app/**/.eslintrc.json` and `./libs/**/.eslintrc.json`):
-
-```json
-{
-    "extends": ["../../.eslintrc.json"],
-    "ignorePatterns": ["!**/*"],
-    "overrides": [
-        ...,
-        {
-            "files": ["*.html"],
-            "extends": ["plugin:@nrwl/nx/angular-template"],
-            "rules": {}
         }
     ]
 }
@@ -198,13 +190,14 @@ If you have the need to overwrite (or disable) some of our in-house rules for yo
 
 You have to know which rule you want to disable and you have to look up *how* to disable it.
 
-For example, if you want to disable the mandatory [header](https://github.com/Stuk/eslint-plugin-header) rule you would modify your root `.eslintrc.json` as follows:
+For example, if you want to disable the mandatory [header](https://github.com/Stuk/eslint-plugin-header) rule you would modify your root `.eslintrc.js` as follows:
 
-```json
-{
+```js
+module.exports = {
     "extends": "@flyacts/eslint-config",
     "parserOptions": {
-        "project": "./tsconfig.json"
+        "project": "./tsconfig.json",
+        "tsconfigRootDir": __dirname
     },
     "rules": {
         "header/header": [0]

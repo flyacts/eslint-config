@@ -1,6 +1,8 @@
 /*!
- * @copyright FLYACTS GmbH 2022
+ * @copyright FLYACTS GmbH 2023
  */
+
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
     root: true,
