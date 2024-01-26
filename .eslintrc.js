@@ -1,5 +1,5 @@
 /*!
- * @copyright FLYACTS GmbH 2023
+ * @copyright FLYACTS GmbH 2024
  */
 
 require('@rushstack/eslint-patch/modern-module-resolution');
@@ -59,7 +59,6 @@ module.exports = {
         '@typescript-eslint/prefer-for-of': ['error'],
         '@typescript-eslint/unified-signatures': ['error'],
         '@typescript-eslint/no-explicit-any': ['error'],
-        '@typescript-eslint/no-implicit-any-catch': ['error'],
         '@typescript-eslint/no-shadow': ['error'],
         '@typescript-eslint/require-await': ['error'],
         'no-caller': ['error'],
